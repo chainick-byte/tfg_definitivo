@@ -1,0 +1,70 @@
+
+
+<div th:fragment="formproducto">
+    <br>
+    <br>
+    <br>
+    <form th:action="@{/tienda/addproducto/}" th:object="${productoNuevo}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombreporducto" class="form-label"><h4>Nombre producto</h4></label>
+            <input type="text" 
+                   class="form-control" 
+                   th:field="*{nombreProductoDto}" 
+                   id="exampleInputEmail1" 
+                   placeholder="Nombre producto">
+        </div>
+        <div class="form-group">
+            <label for="descripcionrpoducto"><h4>Descripcion de producto</h4></label>
+            <textarea class="form-control w-100" 
+                      style="width: 100px; height: 300px;" 
+                      id="exampleFormControlTextarea2" 
+                      th:field="*{descripcionProductoDto}" 
+                      rows="3" 
+                      placeholder="Descripcion del producto">
+            </textarea>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="cantidadproducto" class="form-label"><h4>Cantidad</h4></label>
+                    <input type="number" 
+                           class="form-control" 
+                           id="exampleInputEmail2" 
+                           th:field="*{cantidadDto}" 
+                           placeholder="Nombre producto">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+
+                    <label for="precioproducto" class="form-label"><h4>Precio</h4></label>
+                    <input type="number" 
+                           class="form-control"
+                           th:field="*{precioDto}" 
+                           id="exampleInputEmail1" 
+                           placeholder="precio">
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="custom-file">
+                <label class="custom-file-label" for="inputGroupFile04">Imagen del producto</label>
+                <input type="file"  id="inputGroupFile04" name="archivoImagen" aria-describedby="inputGroupFileAddon04">
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+        <div>
+            <button type="submit" class="btn btn-outline-info l-2 my-sm-0 float-right">
+                <img  th:src="@{/img/mas.svg}"  class="img-responsive" style="width: 22px">
+                Add 
+            </button>
+        </div>
+
+    </form>
+    <br/>
+    <br/>
+    <br/>
+</div>

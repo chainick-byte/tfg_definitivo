@@ -1,0 +1,27 @@
+
+
+
+<div th:each="producto:${productosRecibidos}"  th:fragment="producto">
+    <div class="row" >
+        <div class="col-lg-4 p-1">
+            <div class="card border-1">
+                <div class="row no-gutters">
+                    <div class="col-auto">
+                        <img th:src="@{/imagen/{images}(images=${producto.imagenProducto})}" width="200" height="200" style="object-fit: cover;">
+                    </div>
+                    <div class="col col-special">
+                        <div class="card-body">
+                            <h3 class="card-title text-truncate" th:text="${producto.nombreProducto}"></h3>
+                            <div class="text">
+                            <p th:text="${producto.descripcionProducto}"></p>
+                            </div>
+                            <small th:text="${producto.fechaCreacion}"></small>
+                             <small th:text="@{Precio: }+${producto.precio}"></small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
